@@ -1,7 +1,10 @@
 //
 
+import com.regex.EnumType;
+import com.regex.ValidateTool;
 import com.sddr.DateTool;
 import com.sddr.StringTool;
+import org.junit.Test;
 
 import java.util.Date;
 
@@ -9,18 +12,15 @@ import java.util.Date;
  * Created by lvyong on 2016/3/23.
  */
 public class TestStringTool {
-//    @Test
-//    public void TestStr(){
-//        int num = com.sddr.StringTool.getRandomNum();
-//        System.out.println(num);
-//
-//    }
+    @Test
+    public void TestStr(){
+        int num = com.sddr.StringTool.getRandomNum();
+        System.out.println(num);
 
-    public static void main(String[] args ){
-        test();
     }
 
-    public static void test(){
+    @Test
+    public void test(){
         System.out.println("test");
         String strTest = "123,234,456,678,,";
         String[] sL = StringTool.StrSplit(strTest,",");
@@ -37,5 +37,8 @@ public class TestStringTool {
 
         String dtN = DateTool.date2Str(new Date());
         System.out.println(dtN);
+        String phone = "23:59:17";
+        boolean b = ValidateTool.check(phone, EnumType.TIME);//验证时间字符串
+        System.out.println(b);
     }
 }

@@ -1,4 +1,5 @@
 import com.sddr.SortTool;
+import org.junit.Test;
 
 
 import java.util.ArrayList;
@@ -11,7 +12,8 @@ import java.util.Map;
  */
 public class TestSort {
 
-    public static List testMapSort(){
+    @Test
+    public void testMapSort(){
         List sortList = new ArrayList();
 
         Map map = new HashMap();
@@ -32,11 +34,7 @@ public class TestSort {
         list.add(map2);
 
         //return sort(list, "age", "asc");
-        return SortTool.sortParam2(list, "name", "age", "asc");
-    }
-
-    public static void main(String[] args ){
-        List li = testMapSort();
+        List li = SortTool.sortParam2(list, "name", "age", "asc");
         System.out.println(li.size());
     }
 }

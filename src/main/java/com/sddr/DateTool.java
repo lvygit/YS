@@ -5,12 +5,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * ÈÕÆÚ´¦ÀíÀà
+ * æ—¥æœŸå¤„ç†ç±»
  * Created by lvyong on 2016/3/23.
  */
 public class DateTool {
     /**
-     * °´ÕÕyyyy-MM-dd HH:mm:ssµÄ¸ñÊ½£¬ÈÕÆÚ×ª×Ö·û´®
+     * æŒ‰ç…§yyyy-MM-dd HH:mm:ssçš„æ ¼å¼ï¼Œæ—¥æœŸè½¬å­—ç¬¦ä¸²
      * @param date
      * @return yyyy-MM-dd HH:mm:ss
      */
@@ -19,7 +19,7 @@ public class DateTool {
     }
 
     /**
-     * °´ÕÕ²ÎÊıformatµÄ¸ñÊ½£¬ÈÕÆÚ×ª×Ö·û´®
+     * æŒ‰ç…§å‚æ•°formatçš„æ ¼å¼ï¼Œæ—¥æœŸè½¬å­—ç¬¦ä¸²
      * @param date
      * @param format
      * @return
@@ -34,7 +34,7 @@ public class DateTool {
     }
 
     /**
-     * °´ÕÕyyyy-MM-dd HH:mm:ssµÄÄ¬ÈÏ¸ñÊ½£¬×Ö·û´®×ªÈÕÆÚ
+     * æŒ‰ç…§yyyy-MM-dd HH:mm:ssçš„é»˜è®¤æ ¼å¼ï¼Œå­—ç¬¦ä¸²è½¬æ—¥æœŸ
      * @param date
      * @return
      */
@@ -43,7 +43,7 @@ public class DateTool {
     }
 
     /**
-     * °´ÕÕÖ¸¶¨µÄ¸ñÊ½»¯ÈÕÆÚ×Ö·û´®
+     * æŒ‰ç…§æŒ‡å®šçš„æ ¼å¼åŒ–æ—¥æœŸå­—ç¬¦ä¸²
      * @param date
      * @param format
      * @return
@@ -64,7 +64,7 @@ public class DateTool {
 
 
     /**
-     * »ñÈ¡Ê±¼ä¾àÀëµ±Ç°Ê±¼äµÄ¼ä¸ô
+     * è·å–æ—¶é—´è·ç¦»å½“å‰æ—¶é—´çš„é—´éš”
      * @param StrDate
      */
     public static String getTimeAgo(String StrDate,String format){
@@ -85,7 +85,7 @@ public class DateTool {
     }
 
     /**
-     * »ñÈ¡Ê±¼ä¾àÀëµ±Ç°Ê±¼äµÄ¼ä¸ô
+     * è·å–æ—¶é—´è·ç¦»å½“å‰æ—¶é—´çš„é—´éš”
      * @param date
      */
     public static String getTimeAgo(java.util.Date date){
@@ -100,19 +100,19 @@ public class DateTool {
         long sec  = (times/1000-day*24*60*60-hour*60*60-min*60);
 
         StringBuffer sb = new StringBuffer();
-        //sb.append("·¢±íÓÚ£º");
+        //sb.append("å‘è¡¨äºï¼š");
         if(year> 0){
-            sb.append(year+"Äê");
+            sb.append(year+"å¹´");
         }
         if(day%365 > 0){
-            sb.append(day%365+"ÌìÇ°");
+            sb.append(day%365+"å¤©å‰");
         }
         else if(hour>0 ){
-            sb.append(hour+"Ğ¡Ê±Ç°");
+            sb.append(hour+"å°æ—¶å‰");
         } else if(min>0){
-            sb.append(min+"·ÖÖÓÇ°");
+            sb.append(min+"åˆ†é’Ÿå‰");
         } else{
-            sb.append(sec+"ÃëÇ°");
+            sb.append(sec+"ç§’å‰");
         }
 
         resultTimes = sb.toString();
