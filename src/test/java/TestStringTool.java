@@ -40,5 +40,8 @@ public class TestStringTool {
         String phone = "23:59:17";
         boolean b = ValidateTool.check(phone, EnumType.TIME);//验证时间字符串
         System.out.println(b);
+
+        String result = StringTool.getRandomString(10);
+        System.out.println(result);
     }
 }

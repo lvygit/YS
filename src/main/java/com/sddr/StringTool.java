@@ -44,6 +44,22 @@ public class StringTool {
     }
 
     /**
+     * 获取指定位数的字符串
+     * @param length
+     * @return
+     */
+    public static String getRandomString(int length) { //length:生成字符串的长度
+        String strs = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789";
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(strs.length());
+            sb.append(strs.charAt(number));
+        }
+        return sb.toString();
+    }
+
+    /**
      * 检测字符串是否不为空(null,"","null")
      * @param s
      * @return 不为空则返回true，否则返回false
