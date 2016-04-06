@@ -41,6 +41,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Gradle: javaTEA:tea-hex:1.0">
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/javaTEA/tea-hex/1.0/tea-hex-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="module-library" scope="TEST">
       <library name="Gradle: junit:junit:4.11">
         <CLASSES>

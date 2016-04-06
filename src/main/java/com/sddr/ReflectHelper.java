@@ -1,12 +1,27 @@
 package com.sddr;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * 反射处理类
  * Created by lvyong on 2016/3/31.
  */
 public class ReflectHelper {
+
+    public static Object getMethodByName(Object obj,String methodName) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+        for (Class<?> superClass = obj.getClass(); superClass != Object.class; superClass = superClass
+                .getSuperclass()) {
+            Method resultMethod =  superClass.getClass().getMethod(methodName);
+            if(resultMethod!=null){
+                Object o = resultMethod.invoke(obj);
+                return o;
+            }
+        }
+        return null;
+    }
+
     /**
      * 获取obj对象fieldName的Field
      * @param obj

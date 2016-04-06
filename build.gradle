@@ -23,7 +23,8 @@ dependencies {
   //  compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'commons-beanutils:commons-beanutils:1.9.2',
     'commons-collections:commons-collections:3.2.1',
-    'commons-logging:commons-logging:1.2'
+    'commons-logging:commons-logging:1.2',
+            'javaTEA:tea-hex:1.0'
 //==============以上是排序功能引入
  //   compile 'sun.misc:sun.misc:1.0'
 
