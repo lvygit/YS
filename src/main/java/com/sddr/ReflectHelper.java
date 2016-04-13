@@ -23,6 +23,22 @@ public class ReflectHelper {
     }
 
     /**
+     * 获取obj对象的Field
+     * @param obj
+     * @return
+     */
+    public static Field[] getFields(Object obj) {
+        for (Class<?> superClass = obj.getClass(); superClass != Object.class; superClass = superClass
+                .getSuperclass()) {
+            try {
+                return superClass.getDeclaredFields();
+            } catch (SecurityException e) {
+            }
+        }
+        return null;
+    }
+
+    /**
      * 获取obj对象fieldName的Field
      * @param obj
      * @param fieldName
@@ -53,16 +69,7 @@ public class ReflectHelper {
             throws SecurityException, NoSuchFieldException,
             IllegalArgumentException, IllegalAccessException {
         Field field = getFieldByFieldName(obj, fieldName);
-        Object value = null;
-        if(field!=null){
-            if (field.isAccessible()) {
-                value = field.get(obj);
-            } else {
-                field.setAccessible(true);
-                value = field.get(obj);
-                field.setAccessible(false);
-            }
-        }
+        Object value = getObjectFieldValue(obj,field);
         return value;
     }
 
@@ -87,5 +94,30 @@ public class ReflectHelper {
             field.set(obj, value);
             field.setAccessible(false);
         }
+    }
+
+
+
+
+
+    /**
+     * (重构)根据对象和相应field获取要反射的值
+     * @param obj
+     * @param field
+     * @return
+     * @throws IllegalAccessException
+     */
+    public static Object getObjectFieldValue(Object obj,Field field) throws IllegalAccessException {
+        Object value = null;
+        if(field!=null){
+            if (field.isAccessible()) {
+                value = field.get(obj);
+            } else {
+                field.setAccessible(true);
+                value = field.get(obj);
+                field.setAccessible(false);
+            }
+        }
+        return value;
     }
 }
